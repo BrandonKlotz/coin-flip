@@ -7,6 +7,10 @@ body {
   padding: 4em;
 }
 
+p {
+  color: #555;
+}
+
 button {
 	background: #008700;
 	font-size: 1em;
@@ -46,10 +50,18 @@ input:focus {
   justify-content: space-around;
   margin: 0 auto;
   width: 400px;
-  height: 500px;
+  height: 600px;
   background-color: #fff;
   border-radius: 15px;
   border: 2px solid #ccc;
+}
+
+.totalWrong {
+  color: red;
+}
+
+.totalCorrect {
+  color: green;
 }
 
 #emoji {
