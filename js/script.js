@@ -4,22 +4,29 @@ $('button').on('click', function() { // Flip Button
 
 	$('.coin-flip').css('display','block');
 
-	function coinFlip() {
+	function getHeadsOrTails() {
 		return Math.floor(Math.random() * 2);
 	}
 
-	let flip = coinFlip();
+	let flip = getHeadsOrTails();
+
 	if (flip > 0.5) {
 		var result = "heads";
 	} else {
 		result = "tails";
 	}
 
+	let guess = $('input').val().toLowerCase();
+
+	if (guess !== 'heads' && guess !== 'tails') {
+		$('#validate').text('Please enter a guess');
+		$('#validate').css('color', 'red');
+		return;
+	}
+
 	$('#display-result').text(result);
 
-	var userGuess = $('input').val();
-
-	if (userGuess === result) {
+	if (guess === result) {
 		$('#validate').text("Nice guess! You got it right.");
 		$('#validate').css('color', 'green');
 		$('#emoji').text('');
