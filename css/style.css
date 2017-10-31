@@ -1,0 +1,103 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 4em;
+}
+
+button {
+	background: #008700;
+	font-size: 1em;
+  padding: 1.5em;
+	color: white;
+	width: 160px;
+  border: none;
+	border-radius: 15px;
+}
+
+button:hover {
+  background: #009900;
+}
+
+input {
+  width: 320px;
+  padding: 1.5em;
+	border: none;
+	font-size: 1em;
+	border-bottom: 2px solid #ccc;
+	margin-bottom: 2em;
+}
+
+input:focus {
+	outline-color: transparent;
+  outline-style: none;
+	border: 2px dashed #ccc;
+  border-radius: 10px;
+}
+
+.form {
+  padding: 2em;
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+}
+
+#emoji {
+  font-size: 6em;
+}
+
+/* coin flip */
+
+.coin-flip{
+  display: none;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform-style: preserve-3d;
+  position: absolute;
+  animation: fly 1.5s ease-in-out 0s infinite alternate;
+}
+.coin-flip img{
+  width: 100px;
+}
+
+.coin-heads, .coin-tails {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.coin-heads{
+  animation: flip-head .7s linear 0s infinite alternate;
+}
+.coin-tails{
+  animation: flip-tail .7s linear 0s infinite alternate;
+}
+
+@keyframes fly {
+  0% { top: 100%; }
+  100% { top: 80%; }
+}
+
+@keyframes flip-head {
+  0%, 100% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+}
+
+@keyframes flip-tail {
+  0%, 100% { transform: rotateX(180deg); }
+  50% { transform: rotateX(0deg); }
+}
